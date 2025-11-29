@@ -6,10 +6,10 @@ import os
 
 # ----------------------- LOAD SECRETS -------------------
 load_dotenv()
-NEWSAPI_Key = os.getenv("NEWSAPI_Key")
+NEWSAPI_Key = os.getenv("NEWSAPI_KEY")
 ACCOUNT_SID = os.getenv("ACCOUNT_SID")
 AUTH_TOKEN = os.getenv("AUTH_TOKEN")
-my_number = os.getenv("my_number")
+my_number = os.getenv("MY_NUMBER")
 ALPHA_KEY = os.getenv("ALPHA_KEY")
 
 # ----------------------- CONSTANTS ----------------------
