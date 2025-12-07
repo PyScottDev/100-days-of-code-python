@@ -45,11 +45,24 @@ class Snake:
         if self.head.heading() != UP:
             self.head.setheading(DOWN)
 
-    def wall_detect(self):
-        x, y = self.head.pos()
-        #if x < -280 or x > 280 or y < -280 or y > 280:
-        if x > 580 or x < -580 or y > 380 or y < -380:
-            return True
+    # def wall_detect(self):
+    #     x, y = self.head.pos()
+    #     #if x < -280 or x > 280 or y < -280 or y > 280:
+    #     if x > 580 or x < -580 or y > 380 or y < -380:
+    #         return True
+
+    def wrap_screen(self):
+        x = self.head.xcor()
+        y = self.head.ycor()
+        if x > 580:
+            self.head.goto(-580, y)
+        elif x < -580:
+            self.head.goto(580, y)
+        if y > 380:
+            self.head.goto(x, -380)
+        elif y < -380:
+            self.head.goto(x, 380)
+
 
     def snake_grow(self):
         add_segment = Turtle("square")

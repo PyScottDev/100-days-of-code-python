@@ -38,7 +38,7 @@ screen.onkeypress(snake.right, "Right")
 game_is_on = True
 while game_is_on:
     screen.update()
-    time.sleep(0.05)
+    time.sleep(0.075)
     
     snake.move()
     if snake.head.distance(food) < 15:
@@ -46,11 +46,11 @@ while game_is_on:
         eat_sound.play()
         score.increase_score()
         snake.snake_grow()
-    
-    if snake.wall_detect():
-        game_over_sound.play()
-        score.reset_score()
-        snake.snake_reset()
+    snake.wrap_screen()
+    # if snake.wall_detect():
+    #     game_over_sound.play()
+    #     score.reset_score()
+    #     snake.snake_reset()
     if snake.snake_collision():
         game_over_sound.play()
         score.reset_score()
