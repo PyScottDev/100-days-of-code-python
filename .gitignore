@@ -9,3 +9,21 @@ __pycache__/
 
 # Environment variables
 .env
+
+# VS Code (workspace settings)
+.vscode/
+
+# Selenium / Chrome user data directory
+chrome_profile/
+
+# Tokens / secrets files
+git_token.txt
+
+# VS Code (workspace settings)
+.vscode/
+
+# Selenium / Chrome user data directory
+chrome_profile/
+
+# Tokens / secrets files
+git_token.txt
