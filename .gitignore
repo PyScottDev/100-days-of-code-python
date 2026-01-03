@@ -10,20 +10,22 @@ __pycache__/
 # Environment variables
 .env
 
-# VS Code (workspace settings)
+# Flask instance folder
+instance/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+
+# VS Code
 .vscode/
 
-# Selenium / Chrome user data directory
+# Selenium / Chrome user data
 chrome_profile/
 
-# Tokens / secrets files
-git_token.txt
-
-# VS Code (workspace settings)
-.vscode/
-
-# Selenium / Chrome user data directory
-chrome_profile/
-
-# Tokens / secrets files
+# Tokens / secrets
 git_token.txt
