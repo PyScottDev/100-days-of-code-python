@@ -1,0 +1,38 @@
+{% include "header.html" %}
+<!-- Page Header-->
+        <header class="masthead" style="background-image: url('{{post.thumbnail}}')">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="post-heading">
+                            <h1>{{ post.simple_title }}</h1>
+                            <h2 class="subheading">{{ post.simple_subtitle | safe }}</h2>
+                            <span class="meta">
+                                Posted by
+                                <a href="#!">Scott Somerville</a>
+                                on January 26, 2026
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- Post Content-->
+        <article class="mb-4">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <p>{{ post.simple_body | safe }}</p>
+                        <ol>
+                        {% for q in post.questions %}
+                        <li><strong>{{ q }}</strong></li>
+                        {% endfor %}
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </article>
+        
+
+{% include "footer.html" %}
+
