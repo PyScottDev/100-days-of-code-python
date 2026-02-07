@@ -5,11 +5,13 @@ from wtforms import StringField, SubmitField, SelectField
 from wtforms.validators import DataRequired,URL
 import guardian
 import gemini
+from dotenv import load_dotenv
+import os
 
 #topic = "politics"
-
+load_dotenv()
 app = Flask(__name__)
-app.config['SECRET_KEY'] = '8BYkEfBA6O6donzWlSihBXox7C0sKR6b'
+app.config['SECRET_KEY'] = os.getenv("SECRET_KEY")
 bootstrap = Bootstrap5(app)
 
 class TopicForm(FlaskForm):

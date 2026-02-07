@@ -12,6 +12,7 @@ GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 model = "gemini-2.5-flash-lite"
+#model = "Gemini 2.0 Flash"
 
 headline = "Global outcry after US launches strikes on Venezuela and captures president"
 subheadline = "France, Russia, China and EU say Washington broke international law after US troops carried out the operation"
@@ -70,7 +71,7 @@ def simplify_body(body, level):
     prompt = f"""
     Role: Act as an English teacher simplifying news for {level.upper()} learners. 
     Task: Simplify the provided news story. Write a maximum of {word_count} words. Create 3 discussion question based on the news contents. 
-    Constraints: 
+    Strict Constraints: 
     - Use level appropriate vocabulary.
     - Use level appropriate grammar and structures. 
     - Keep names, places, and numbers the same.
@@ -81,6 +82,7 @@ def simplify_body(body, level):
     - Questions should be returned as a Python list. 
     - Do not include any conversational text.
     - The "id" must match the input id exactly.
+    - Must be a maximum of <= {word_count} words.
 
     Input JSON:
     {json.dumps(news_body, ensure_ascii=False)}
